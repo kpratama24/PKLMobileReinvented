@@ -1,13 +1,13 @@
-package com.cendra.prayogo.pklmobile2.service;
+package com.near.kevin.PKLMobileV2.service;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.cendra.prayogo.pklmobile2.db.PklDbHelper;
+import com.near.kevin.PKLMobileV2.db.PklDbHelper;
 
 /**
- * Created by Prayogo Cendra on 2/18/2017.
+ * Created by Kevin Pratama on 2/23/2017.
  */
 
 public class PklAccountManager {

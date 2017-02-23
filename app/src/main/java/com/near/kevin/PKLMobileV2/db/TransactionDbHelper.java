@@ -1,4 +1,4 @@
-package com.cendra.prayogo.pklmobile2.db;
+package com.near.kevin.PKLMobileV2.db;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Admin on 2/18/2017.
+ * Created by Kevin Pratama on 2/23/2017.
  */
 
 public class TransactionDbHelper extends SQLiteOpenHelper {

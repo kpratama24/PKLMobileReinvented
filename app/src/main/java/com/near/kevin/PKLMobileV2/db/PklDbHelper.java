@@ -1,4 +1,4 @@
-package com.cendra.prayogo.pklmobile2.db;
+package com.near.kevin.PKLMobileV2.db;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.support.annotation.NonNull;
 
 /**
- * Created by Prayogo Cendra on 2/18/2017.
+ * Created by Kevin Pratama on 2/18/2017.
  */
 
 public class PklDbHelper extends SQLiteOpenHelper {

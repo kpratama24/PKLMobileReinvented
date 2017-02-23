@@ -4,7 +4,7 @@
     android:id="@+id/activity_transaction_detail"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.cendra.prayogo.pklmobile2.TransactionDetailActivity">
+    tools:context="com.near.kevin.PKLMobileV2.TransactionDetailActivity">
 
     <ScrollView
         android:layout_width="match_parent"

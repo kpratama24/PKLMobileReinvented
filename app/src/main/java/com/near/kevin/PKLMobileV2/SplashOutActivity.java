@@ -1,10 +1,10 @@
-package com.cendra.prayogo.pklmobile2;
+package com.near.kevin.PKLMobileV2;
 
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 
-import com.cendra.prayogo.pklmobile2.service.PklAccountManager;
+import com.near.kevin.PKLMobileV2.service.PklAccountManager;
 
 public class SplashOutActivity extends AppCompatActivity {
 

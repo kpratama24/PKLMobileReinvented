@@ -4,7 +4,7 @@
     android:id="@+id/activity_register"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.cendra.prayogo.pklmobile2.RegisterActivity">
+    tools:context="com.near.kevin.PKLMobileV2.RegisterActivity">
 
     <ScrollView
         android:layout_width="match_parent"

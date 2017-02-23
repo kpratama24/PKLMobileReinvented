@@ -1,4 +1,4 @@
-package com.cendra.prayogo.pklmobile2;
+package com.near.kevin.PKLMobileV2;
 
 import android.content.ContentValues;
 import android.content.Intent;
@@ -8,8 +8,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.cendra.prayogo.pklmobile2.db.ProductDbHelper;
-import com.cendra.prayogo.pklmobile2.service.PklAccountManager;
+import com.near.kevin.PKLMobileV2.db.ProductDbHelper;
+import com.near.kevin.PKLMobileV2.service.PklAccountManager;
 
 import static android.widget.Toast.makeText;
 

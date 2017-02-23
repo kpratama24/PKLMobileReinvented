@@ -1,4 +1,4 @@
-package com.cendra.prayogo.pklmobile2;
+package com.near.kevin.PKLMobileV2;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
@@ -9,7 +9,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.cendra.prayogo.pklmobile2.service.PklAccountManager;
+import com.near.kevin.PKLMobileV2.service.PklAccountManager;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

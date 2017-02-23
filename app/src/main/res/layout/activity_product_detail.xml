@@ -4,7 +4,7 @@
     android:id="@+id/activity_product_detail"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.cendra.prayogo.pklmobile2.ProductDetailActivity">
+    tools:context="com.near.kevin.PKLMobileV2.ProductDetailActivity">
 
     <ScrollView
         android:layout_width="match_parent"

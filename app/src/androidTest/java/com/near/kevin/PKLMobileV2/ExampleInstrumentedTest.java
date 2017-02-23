@@ -1,4 +1,4 @@
-package com.cendra.prayogo.pklmobile2;
+package com.near.kevin.PKLMobileV2;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

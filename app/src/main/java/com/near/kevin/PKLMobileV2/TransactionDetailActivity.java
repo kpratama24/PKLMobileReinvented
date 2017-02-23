@@ -1,4 +1,4 @@
-package com.cendra.prayogo.pklmobile2;
+package com.near.kevin.PKLMobileV2;
 
 import android.content.ContentValues;
 import android.content.Intent;
@@ -9,9 +9,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.cendra.prayogo.pklmobile2.db.ProductDbHelper;
-import com.cendra.prayogo.pklmobile2.db.TransactionDbHelper;
-import com.cendra.prayogo.pklmobile2.service.PklAccountManager;
+import com.near.kevin.PKLMobileV2.db.ProductDbHelper;
+import com.near.kevin.PKLMobileV2.db.TransactionDbHelper;
+import com.near.kevin.PKLMobileV2.service.PklAccountManager;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
