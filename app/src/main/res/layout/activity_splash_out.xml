@@ -25,19 +25,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/imageView"
         android:layout_marginTop="48dp"
-        android:text="Terima kasih telah menggunakan aplikasi ini."
+        android:text="See you !"
         android:textAlignment="center"
         android:textColor="#000"
-        android:textSize="16sp" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textView"
-        android:layout_marginTop="16dp"
-        android:text="Kami sangat berharap masukan dari anda. Semua masukan silakan disampaikan ke email 7314033@student.unpar.ac.id"
-        android:textAlignment="center"
-        android:textColor="#000"
+        android:textStyle="bold"
         android:textSize="16sp" />
 
 </RelativeLayout>
