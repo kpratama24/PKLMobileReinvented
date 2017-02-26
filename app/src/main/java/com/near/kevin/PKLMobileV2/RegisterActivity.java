@@ -35,10 +35,10 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
         this.email = (EditText) findViewById(R.id.activity_register_email);
-        this.name = (EditText) findViewById(R.id.activity_register_name);
-        this.address = (EditText) findViewById(R.id.activity_register_address);
-        this.phone = (EditText) findViewById(R.id.activity_register_phone);
         this.birthday = (EditText) findViewById(R.id.activity_register_birthday);
+        this.name = (EditText) findViewById(R.id.activity_register_name);
+        this.phone = (EditText) findViewById(R.id.activity_register_phone);
+        this.address = (EditText) findViewById(R.id.activity_register_address);
         this.product = (EditText) findViewById(R.id.activity_register_product);
 
         this.birthdayCalendar = Calendar.getInstance();
@@ -82,25 +82,26 @@ public class RegisterActivity extends AppCompatActivity {
         return this.email.getText().toString().trim().toLowerCase();
     }
 
-    private String getNameField() {
-        return this.name.getText().toString().trim();
-    }
-
     private String getAddressField() {
         return this.address.getText().toString().trim();
+    }
+
+    private String getNameField() {
+        return this.name.getText().toString().trim();
     }
 
     private String getPhoneField() {
         return this.phone.getText().toString().trim();
     }
 
+    private String getProductField() {
+        return this.product.getText().toString().trim();
+    }
+
     private String getBirthdayField() {
         return this.birthday.getText().toString().trim();
     }
 
-    private String getProductField() {
-        return this.product.getText().toString().trim();
-    }
 
     public void save(View view) {
         String emailText = getEmailField();
@@ -111,23 +112,23 @@ public class RegisterActivity extends AppCompatActivity {
         String productText = getProductField();
 
         if (emailText.equals("")) {
-            makeText(RegisterActivity.this, "Mohon isi kolom alamat email", Toast.LENGTH_LONG).show();
+            makeText(RegisterActivity.this, "Please fill in your email", Toast.LENGTH_LONG).show();
         } else if (nameText.equals("")) {
-            makeText(RegisterActivity.this, "Mohon isi kolom nama lengkap", Toast.LENGTH_LONG).show();
+            makeText(RegisterActivity.this, "Please fill in your name", Toast.LENGTH_LONG).show();
         } else if (addressText.equals("")) {
-            makeText(RegisterActivity.this, "Mohon isi kolom alamat lapak", Toast.LENGTH_LONG).show();
+            makeText(RegisterActivity.this, "Please fill in your shanties address", Toast.LENGTH_LONG).show();
         } else if (phoneText.equals("")) {
-            makeText(RegisterActivity.this, "Mohon isi kolom nomor hp", Toast.LENGTH_LONG).show();
+            makeText(RegisterActivity.this, "Please fill in your phone number", Toast.LENGTH_LONG).show();
         } else if (birthdayText.equals("")) {
-            makeText(RegisterActivity.this, "Mohon isi kolom tanggal lahir", Toast.LENGTH_LONG).show();
+            makeText(RegisterActivity.this, "Please fill in your birth date", Toast.LENGTH_LONG).show();
         } else if (productText.equals("")) {
-            makeText(RegisterActivity.this, "Mohon isi kolom produk unggul", Toast.LENGTH_LONG).show();
+            makeText(RegisterActivity.this, "Please fill in your featured product", Toast.LENGTH_LONG).show();
         } else {
             boolean canRegister = PklAccountManager.register(RegisterActivity.this, emailText, nameText, addressText, phoneText, birthdayText);
             if (!canRegister) {
-                makeText(RegisterActivity.this, "Registrasi gagal, alamat email " + emailText + " telah digunakan!", Toast.LENGTH_LONG).show();
+                makeText(RegisterActivity.this, "Registration failed, email already used.", Toast.LENGTH_LONG).show();
             } else {
-                makeText(RegisterActivity.this, "Selamat anda telah terdaftar, silakan login untuk menggunakan aplikasi ini! Saat login, gunakan alamat email yang anda telah daftarkan sebagai " + emailText + "!", Toast.LENGTH_LONG).show();
+                makeText(RegisterActivity.this, "Successfully registered ! ", Toast.LENGTH_LONG).show();
                 onBackPressed();
             }
         }

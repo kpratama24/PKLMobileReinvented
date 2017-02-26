@@ -25,7 +25,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="48dp"
-                android:text="REGISTRASI PENGGUNA APLIKASI PKL MOBILE"
+                android:text="PKL Mobile User Registration"
                 android:textAlignment="center"
                 android:textColor="#000"
                 android:textSize="24sp"
@@ -40,7 +40,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Alamat Email"
+                    android:text="Email Address"
                     android:textColor="#000"
                     android:textSize="16sp" />
 
@@ -64,7 +64,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Nama Lengkap"
+                    android:text="Full Name"
                     android:textColor="#000"
                     android:textSize="16sp" />
 
@@ -88,9 +88,9 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Alamat Lapak"
+                    android:text="Shanties Address"
                     android:textColor="#000"
-                    android:textSize="16sp" />
+                    android:textSize="14sp" />
 
                 <EditText
                     android:id="@+id/activity_register_address"
@@ -112,7 +112,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Nomor HP"
+                    android:text="Phone Number"
                     android:textColor="#000"
                     android:textSize="16sp" />
 
@@ -136,7 +136,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Tanggal Lahir"
+                    android:text="Birthday Date"
                     android:textColor="#000"
                     android:textSize="16sp" />
 
@@ -161,9 +161,9 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Produk Unggul"
+                    android:text="Featured Product"
                     android:textColor="#000"
-                    android:textSize="16sp" />
+                    android:textSize="14sp" />
 
                 <EditText
                     android:id="@+id/activity_register_product"
@@ -194,7 +194,7 @@
         android:layout_height="wrap_content"
         android:layout_marginRight="16dp"
         android:onClick="save"
-        android:text="@string/save"
+        android:text="@string/register"
         android:layout_alignBaseline="@+id/button"
         android:layout_alignBottom="@+id/button"
         android:layout_alignParentEnd="true"

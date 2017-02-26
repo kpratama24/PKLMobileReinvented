@@ -18,7 +18,7 @@ import com.near.kevin.PKLMobileV2.service.PklAccountManager;
 import java.util.List;
 
 public class RecapActivity extends AppCompatActivity {
-    private ContentValues loggedInPkl;
+    private ContentValues accountIn;
     private TransactionDbHelper transactionDbHelper;
     private ProductDbHelper productDbHelper;
 
@@ -33,14 +33,14 @@ public class RecapActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recap);
 
-        this.loggedInPkl = PklAccountManager.getLoggedIn(RecapActivity.this);
+        this.accountIn = PklAccountManager.getLoggedIn(RecapActivity.this);
         this.transactionDbHelper = new TransactionDbHelper(RecapActivity.this);
         this.productDbHelper = new ProductDbHelper(RecapActivity.this);
 
         this.listView = (ListView) findViewById(R.id.activity_recap_list);
         this.totalPrice = (TextView) findViewById(R.id.activity_recap_total_price);
 
-        this.transactionlist = this.transactionDbHelper.getAllTransaction(this.loggedInPkl.getAsString(PklAccountManager.LOGGED_IN_EMAIL));
+        this.transactionlist = this.transactionDbHelper.getAllTransaction(this.accountIn.getAsString(PklAccountManager.LOGGED_IN_EMAIL));
 
         int transactionCount = transactionlist.size();
         String[] dates = new String[transactionCount];

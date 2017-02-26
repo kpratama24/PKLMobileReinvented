@@ -23,14 +23,26 @@
                 android:id="@+id/activity_transaction_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="48dp"
+                android:layout_marginBottom="12dp"
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
                 android:layout_marginRight="@dimen/activity_horizontal_margin"
-                android:text="TRANSAKSI PENJUALAN PKL email PKL yang login"
+                android:text="Transaction detail"
                 android:textAlignment="center"
                 android:textColor="#000"
                 android:textSize="24sp"
                 android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/activity_transaction_subtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:text="for PKL <pkl_name>"
+                android:textAlignment="center"
+                android:textColor="#000"
+                android:textSize="24sp"/>
 
             <ListView
                 android:id="@+id/activity_transaction_list"

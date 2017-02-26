@@ -16,23 +16,23 @@ import static android.widget.Toast.makeText;
 public class ProductDetailActivity extends AppCompatActivity {
     public static final String PRODUCT_ID = "PRODUCT_ID";
 
-    private ContentValues loggedInPkl;
+    private ContentValues accountIn;
     private ProductDbHelper productDbHelper;
 
     private EditText name;
     private EditText basePrice;
     private EditText sellPrice;
-
+    
+    private boolean alreadyAdded;
     private int productId;
-    private boolean isAddItem;
-    private String emailText;
+    private String emailData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_detail);
 
-        this.loggedInPkl = PklAccountManager.getLoggedIn(ProductDetailActivity.this);
+        this.accountIn = PklAccountManager.getLoggedIn(ProductDetailActivity.this);
         this.productDbHelper = new ProductDbHelper(ProductDetailActivity.this);
 
         this.name = (EditText) findViewById(R.id.activity_product_detail_name);
@@ -40,10 +40,10 @@ public class ProductDetailActivity extends AppCompatActivity {
         this.sellPrice = (EditText) findViewById(R.id.activity_product_detail_sell_price);
 
         this.productId = getIntent().getIntExtra(PRODUCT_ID, -1);
-        this.isAddItem = this.productId < 0;
-        this.emailText = this.loggedInPkl.getAsString(PklAccountManager.LOGGED_IN_EMAIL);
+        this.alreadyAdded = this.productId < 0;
+        this.emailData = this.accountIn.getAsString(PklAccountManager.LOGGED_IN_EMAIL);
 
-        if (!this.isAddItem) {
+        if (!this.alreadyAdded) {
             ContentValues product = this.productDbHelper.getProduct(this.productId);
             this.name.setText(product.getAsString(ProductDbHelper.COLUMN_NAME_NAME));
             this.basePrice.setText(product.getAsString(ProductDbHelper.COLUMN_NAME_BASE_PRICE));
@@ -72,7 +72,7 @@ public class ProductDetailActivity extends AppCompatActivity {
     }
 
     public void save(View view) {
-        String nameText = getNameField();
+        String productName = getNameField();
         int basePrice = 0;
         try {
             basePrice = Integer.parseInt(getBasePriceField());
@@ -83,25 +83,25 @@ public class ProductDetailActivity extends AppCompatActivity {
             sellPrice = Integer.parseInt(getSellPriceField());
         } catch (NumberFormatException e) {
         }
-        if (nameText.equals("")) {
-            makeText(ProductDetailActivity.this, "Mohon isi kolom nama produk", Toast.LENGTH_LONG).show();
+        if (productName.equals("")) {
+            makeText(ProductDetailActivity.this, "Please fill in the product name", Toast.LENGTH_LONG).show();
         } else if (basePrice == 0) {
-            makeText(ProductDetailActivity.this, "Mohon isi kolom harga pokok", Toast.LENGTH_LONG).show();
+            makeText(ProductDetailActivity.this, "Please fill in the product base price", Toast.LENGTH_LONG).show();
         } else if (sellPrice == 0) {
-            makeText(ProductDetailActivity.this, "Mohon isi kolom harga jual", Toast.LENGTH_LONG).show();
-        } else if (isAddItem) {
-            this.productDbHelper.insertProduct(nameText, basePrice, sellPrice, this.emailText);
-            makeText(ProductDetailActivity.this, "Produk " + nameText + " berhasil ditambahkan", Toast.LENGTH_LONG).show();
+            makeText(ProductDetailActivity.this, "Please fill in the product sell price", Toast.LENGTH_LONG).show();
+        } else if (alreadyAdded) {
+            this.productDbHelper.insertProduct(productName, basePrice, sellPrice, this.emailData);
+            makeText(ProductDetailActivity.this, "Product successfully added", Toast.LENGTH_LONG).show();
             onBackPressed();
         } else {
-            this.productDbHelper.updateProduct(this.productId, nameText, basePrice, sellPrice);
-            makeText(ProductDetailActivity.this, "Produk " + nameText + " berhasil di-update", Toast.LENGTH_LONG).show();
+            this.productDbHelper.updateProduct(this.productId, productName, basePrice, sellPrice);
+            makeText(ProductDetailActivity.this, "Product successfully added", Toast.LENGTH_LONG).show();
             onBackPressed();
         }
     }
 
     public void add(View view) {
-        String nameText = getNameField();
+        String productName = getNameField();
         int basePrice = 0;
         try {
             basePrice = Integer.parseInt(getBasePriceField());
@@ -112,26 +112,26 @@ public class ProductDetailActivity extends AppCompatActivity {
             sellPrice = Integer.parseInt(getSellPriceField());
         } catch (NumberFormatException e) {
         }
-        if (nameText.equals("")) {
-            makeText(ProductDetailActivity.this, "Mohon isi kolom nama produk", Toast.LENGTH_LONG).show();
+        if (productName.equals("")) {
+            makeText(ProductDetailActivity.this, "Please fill in the product name", Toast.LENGTH_LONG).show();
         } else if (basePrice == 0) {
-            makeText(ProductDetailActivity.this, "Mohon isi kolom harga pokok", Toast.LENGTH_LONG).show();
+            makeText(ProductDetailActivity.this, "Please fill in the product base price", Toast.LENGTH_LONG).show();
         } else if (sellPrice == 0) {
-            makeText(ProductDetailActivity.this, "Mohon isi kolom harga jual", Toast.LENGTH_LONG).show();
-        } else if (isAddItem) {
-            this.productDbHelper.insertProduct(nameText, basePrice, sellPrice, this.emailText);
-            makeText(ProductDetailActivity.this, "Produk " + nameText + " berhasil ditambahkan", Toast.LENGTH_LONG).show();
-            this.name.setText("");
-            this.basePrice.setText("");
-            this.sellPrice.setText("");
+            makeText(ProductDetailActivity.this, "Please fill in the product sell price", Toast.LENGTH_LONG).show();
+        } else if (alreadyAdded) {
+            this.productDbHelper.insertProduct(productName, basePrice, sellPrice, this.emailData);
+            makeText(ProductDetailActivity.this, "Product successfully added", Toast.LENGTH_LONG).show();
+            this.name.getText().clear();
+            this.basePrice.getText().clear();
+            this.sellPrice.getText().clear();
         } else {
-            this.productDbHelper.updateProduct(this.productId, nameText, basePrice, sellPrice);
-            makeText(ProductDetailActivity.this, "Produk " + nameText + " berhasil diperbaharui", Toast.LENGTH_LONG).show();
+            this.productDbHelper.updateProduct(this.productId, productName, basePrice, sellPrice);
+            makeText(ProductDetailActivity.this, "Product successfully updated", Toast.LENGTH_LONG).show();
             this.productId = -1;
-            this.isAddItem = true;
-            this.name.setText("");
-            this.basePrice.setText("");
-            this.sellPrice.setText("");
+            this.alreadyAdded = true;
+            this.name.getText().clear();
+            this.basePrice.getText().clear();
+            this.sellPrice.getText().clear();
         }
     }
 

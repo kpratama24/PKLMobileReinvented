@@ -82,15 +82,15 @@ public class LoginActivity extends AppCompatActivity {
         String birthdayText = getBirthdayField();
 
         if (emailText.equals("")) {
-            makeText(LoginActivity.this, "Mohon isi kolom user name", Toast.LENGTH_LONG).show();
+            makeText(LoginActivity.this, "Please input the username", Toast.LENGTH_LONG).show();
         } else if (birthdayText.equals("")) {
-            makeText(LoginActivity.this, "Mohon isi kolom password", Toast.LENGTH_LONG).show();
+            makeText(LoginActivity.this, "Please input the password", Toast.LENGTH_LONG).show();
         } else {
             boolean canLogin = PklAccountManager.login(LoginActivity.this, emailText, birthdayText);
             if (!canLogin) {
-                makeText(LoginActivity.this, "Mohon maaf user name atau password yang anda masukkan salah, silakan ulangi login, atau Registrasi jika belum terdaftar", Toast.LENGTH_LONG).show();
+                makeText(LoginActivity.this, "The credentials you provided are incorrect.", Toast.LENGTH_LONG).show();
             } else {
-                makeText(LoginActivity.this, "Selamat anda telah berhasil login, selanjutnya silakan mengelola katalog atau bertransaksi pada halaman selanjutnya!", Toast.LENGTH_LONG).show();
+                makeText(LoginActivity.this, "Successfully Logged in!", Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(LoginActivity.this, CatalogActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);

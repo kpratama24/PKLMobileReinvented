@@ -25,7 +25,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="48dp"
-                android:text="DETAIL TRANSAKSI PENJUALAN"
+                android:text="Selling Transaction Detail"
                 android:textAlignment="center"
                 android:textColor="#000"
                 android:textSize="24sp"
@@ -40,7 +40,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Nama Produk"
+                    android:text="Product Name "
                     android:textColor="#000"
                     android:textSize="16sp" />
 
@@ -65,7 +65,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Harga Jual"
+                    android:text="Product Price"
                     android:textColor="#000"
                     android:textSize="16sp" />
 
@@ -90,7 +90,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Kuantitas"
+                    android:text="Quantity"
                     android:textColor="#000"
                     android:textSize="16sp" />
 

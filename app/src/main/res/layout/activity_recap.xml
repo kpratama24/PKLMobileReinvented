@@ -25,7 +25,7 @@
                 android:layout_marginBottom="48dp"
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
                 android:layout_marginRight="@dimen/activity_horizontal_margin"
-                android:text="REKAP TRANSAKSI PENJUALAN"
+                android:text="Selling Transaction Record"
                 android:textAlignment="center"
                 android:textColor="#000"
                 android:textSize="24sp"
@@ -46,7 +46,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Total transaksi"
+                    android:text="Total "
                     android:textColor="#000000"
                     android:textSize="16sp"
                     android:textStyle="bold" />
@@ -76,7 +76,7 @@
         android:layout_marginBottom="16dp"
         android:layout_marginStart="16dp"
         android:onClick="exit"
-        android:text="Keluar" />
+        android:text="@string/exit" />
 
 
     <LinearLayout

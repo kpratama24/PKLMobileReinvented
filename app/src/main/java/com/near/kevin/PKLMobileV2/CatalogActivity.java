@@ -33,7 +33,7 @@ public class CatalogActivity extends AppCompatActivity {
         this.loggedInPkl = PklAccountManager.getLoggedIn(CatalogActivity.this);
 
         this.title = (TextView) findViewById(R.id.activity_catalog_title);
-        this.title.setText("KATALOG PRODUK PKL " + loggedInPkl.getAsString(PklAccountManager.LOGGED_IN_EMAIL));
+        this.title.setText("PKL Catalog for " + loggedInPkl.getAsString(PklAccountManager.LOGGED_IN_EMAIL));
 
         this.listView = (ListView) findViewById(R.id.activity_catalog_list);
         this.productDbHelper = new ProductDbHelper(CatalogActivity.this);

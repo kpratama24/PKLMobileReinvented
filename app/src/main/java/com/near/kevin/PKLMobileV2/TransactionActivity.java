@@ -16,7 +16,7 @@ import com.near.kevin.PKLMobileV2.service.PklAccountManager;
 import java.util.List;
 
 public class TransactionActivity extends AppCompatActivity {
-    private ContentValues loggedInPkl;
+    private ContentValues accountIn;
     private ProductDbHelper productDbHelper;
 
     private TextView title;
@@ -30,14 +30,14 @@ public class TransactionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_transaction);
 
-        this.loggedInPkl = PklAccountManager.getLoggedIn(TransactionActivity.this);
+        this.accountIn = PklAccountManager.getLoggedIn(TransactionActivity.this);
 
         this.title = (TextView) findViewById(R.id.activity_transaction_title);
-        this.title.setText("TRANSAKSI PENJUALAN PKL " + loggedInPkl.getAsString(PklAccountManager.LOGGED_IN_EMAIL));
+        this.title.setText("PKL Selling Transaction" + accountIn.getAsString(PklAccountManager.LOGGED_IN_EMAIL));
 
         this.listView = (ListView) findViewById(R.id.activity_transaction_list);
         this.productDbHelper = new ProductDbHelper(TransactionActivity.this);
-        this.productList = this.productDbHelper.getAllProduct(this.loggedInPkl.getAsString(PklAccountManager.LOGGED_IN_EMAIL));
+        this.productList = this.productDbHelper.getAllProduct(this.accountIn.getAsString(PklAccountManager.LOGGED_IN_EMAIL));
 
         String[] products = new String[this.productList.size()];
         for (int i = 0, len = products.length; i < len; ++i) {
@@ -71,15 +71,15 @@ public class TransactionActivity extends AppCompatActivity {
         onBackPressed();
     }
 
-    public void recap(View view) {
-        Intent intent = new Intent(TransactionActivity.this, RecapActivity.class);
+    public void catalog(View view) {
+        Intent intent = new Intent(TransactionActivity.this, CatalogActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
         finish();
     }
 
-    public void catalog(View view) {
-        Intent intent = new Intent(TransactionActivity.this, CatalogActivity.class);
+    public void recap(View view) {
+        Intent intent = new Intent(TransactionActivity.this, RecapActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
         finish();
