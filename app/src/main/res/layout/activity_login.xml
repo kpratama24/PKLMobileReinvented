@@ -100,7 +100,7 @@
         android:layout_marginBottom="16dp"
         android:layout_marginLeft="16dp"
         android:onClick="login"
-        android:text="Login" />
+        android:text="@string/login" />
 
     <Button
         android:layout_width="wrap_content"
@@ -110,7 +110,7 @@
         android:layout_marginBottom="16dp"
         android:layout_marginRight="16dp"
         android:onClick="register"
-        android:text="Registrasi" />
+        android:text="@string/registration" />
 
 </RelativeLayout>
 

@@ -1,1 +1,13 @@
-<resources></resources>
+<resources>
+    <string name="exit">Exit</string>
+    <string name="transaction">Transaction</string>
+    <string name="add">Add</string>
+    <string name="login">Login</string>
+    <string name="registration">Registration</string>
+    <string name="save">Save</string>
+    <string name="catalog">Catalog</string>
+    <string name="cancel">Cancel</string>
+    <string name="record">Record</string>
+    <string name="process">Process</string>
+
+</resources>
