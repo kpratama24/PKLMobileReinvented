@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 import com.near.kevin.PKLMobileV2.service.PklAccountManager;
 
+import org.ksoap2.serialization.SoapObject;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
@@ -23,6 +25,13 @@ public class LoginActivity extends AppCompatActivity {
 
     private Calendar birthdayCalendar;
     private DatePickerDialog birthdayDatePickerDialog;
+
+    String NAMESPACE  = "http://schemas.xmlsoap.org/wsdl";
+    String URL = "http://webtest.unpar.ac.id/pklws/pkl.php?wsdl";
+
+    String SOAP_ACTION = "login";
+    String METHOD_NAME = "login";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +68,8 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
+
+
     }
 
     @Override
@@ -94,6 +105,9 @@ public class LoginActivity extends AppCompatActivity {
                 Intent intent = new Intent(LoginActivity.this, CatalogActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
+                SoapObject request = new SoapObject(NAMESPACE,METHOD_NAME);
+
+                request.addProperty("user",)
                 finish();
             }
         }

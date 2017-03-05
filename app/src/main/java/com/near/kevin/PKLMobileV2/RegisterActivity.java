@@ -25,9 +25,13 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText phone;
     private EditText birthday;
     private EditText product;
-
     private Calendar birthdayCalendar;
     private DatePickerDialog birthdayDatePickerDialog;
+
+
+    String NAMESPACE  = "http://schemas.xmlsoap.org/wsdl";
+    String URL = "http://webtest.unpar.ac.id/pklws/pkl.php?wsdl";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -24,4 +24,5 @@
         <activity android:name="com.near.kevin.PKLMobileV2.SplashOutActivity" />
     </application>
 
+    <uses-permission android:name="android.permission.INTERNET"/>
 </manifest>
